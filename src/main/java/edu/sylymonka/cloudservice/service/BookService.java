@@ -2,7 +2,8 @@ package edu.sylymonka.cloudservice.service;
 
 import edu.sylymonka.cloudservice.model.Book;
 import jakarta.annotation.PostConstruct;
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,8 +15,9 @@ import java.util.List;
 @version  1.0.0
 @since 02.05.2025 - 13:21
 */
+@Getter
 @Service
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class BookService {
 
     private List<Book> books;
@@ -28,10 +30,6 @@ public class BookService {
         books.add(new Book("4", "Третя дівчина", "Агата Крісті", "Yakaboo", 400));
     }
 
-
-    public List<Book> getBooks() {
-        return books;
-    }
 
     public Book getBook(String id) {
         return books.stream().filter(b -> b.getId().equals(id)).findFirst().orElse(null);

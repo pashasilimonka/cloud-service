@@ -8,6 +8,8 @@ package edu.sylymonka.cloudservice.model;
 @since 02.05.2025 - 13:18
 */
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.*;
 
 @Data
@@ -17,8 +19,9 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @ToString
+@Entity
 public class Book {
-
+    @Id
     private String id;
     private String title;
     private String author;
